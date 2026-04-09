@@ -1,12 +1,12 @@
+import logo from "@/assets/logo.png";
+
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
-            <p className="text-xl font-bold font-heading tracking-tight">
-              BLAN<span className="text-accent">LOGISTICS</span>
-            </p>
+            <img src={logo} alt="Blan Logistics" className="h-8 brightness-0 invert" loading="lazy" />
             <p className="text-sm text-primary-foreground/50 mt-1">
               Blan Logistics Sp. z o.o. • NIP PL1182114447
             </p>
