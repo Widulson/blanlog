@@ -20,11 +20,10 @@ const HeroSection = () => {
         height={1080}
       />
       <div className="absolute inset-0 hero-overlay" />
-      <div className="absolute inset-0 grid-bg" />
 
       {/* Decorative lines */}
-      <div className="absolute top-0 left-[15%] w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
-      <div className="absolute top-0 left-[85%] w-px h-full bg-gradient-to-b from-transparent via-primary/10 to-transparent hidden md:block" />
+      <div className="absolute top-0 left-[15%] w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-0 left-[85%] w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent hidden md:block" />
 
       <div className="relative z-10 container mx-auto px-6 pt-20">
         <div className="grid md:grid-cols-5 gap-12 items-center min-h-[80vh]">
@@ -34,10 +33,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-1.5 mb-8"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-1.5 mb-8"
             >
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-medium text-primary uppercase tracking-widest">
+              <span className="w-2 h-2 rounded-full gradient-accent animate-pulse" />
+              <span className="text-xs font-medium text-white/90 uppercase tracking-widest">
                 Bardzo dobry płatnik
               </span>
             </motion.div>
@@ -46,7 +45,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-6xl md:text-8xl font-bold text-foreground tracking-tighter leading-[0.9] mb-6"
+              className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-[0.9] mb-6"
             >
               Blan
               <br />
@@ -57,7 +56,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-lg text-foreground/40 max-w-md mb-10 leading-relaxed"
+              className="text-lg text-white/55 max-w-md mb-10 leading-relaxed"
             >
               Profesjonalna spedycja i transport międzynarodowy. Od 2015 roku z najwyższą oceną na rynku.
             </motion.p>
@@ -77,7 +76,7 @@ const HeroSection = () => {
               </a>
               <a
                 href="mailto:faktury@blanlog.com"
-                className="inline-flex items-center gap-2 bg-secondary/50 backdrop-blur-sm border border-border text-foreground/70 font-medium px-7 py-3.5 rounded-xl hover:bg-secondary hover:text-foreground transition-all"
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 text-white/80 font-medium px-7 py-3.5 rounded-xl hover:bg-white/15 hover:text-white transition-all"
               >
                 <Mail className="w-4 h-4" />
                 faktury@blanlog.com
@@ -98,11 +97,11 @@ const HeroSection = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1 + i * 0.1 }}
-                className="bg-card/40 backdrop-blur-md border border-border/50 rounded-2xl p-5 hover:border-primary/30 hover:glow-accent transition-all duration-500"
+                className="bg-white/8 backdrop-blur-md border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-all duration-500"
               >
-                <p className="text-3xl md:text-4xl font-bold text-foreground mb-1">{stat.value}</p>
+                <p className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</p>
                 <p className="text-xs text-primary font-semibold uppercase tracking-wider">{stat.label}</p>
-                <p className="text-xs text-foreground/30 mt-0.5">{stat.sub}</p>
+                <p className="text-xs text-white/30 mt-0.5">{stat.sub}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -116,12 +115,12 @@ const HeroSection = () => {
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-xs text-foreground/30 uppercase tracking-widest">Przewiń</span>
+        <span className="text-xs text-white/30 uppercase tracking-widest">Przewiń</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
         >
-          <ArrowDown className="w-4 h-4 text-primary/50" />
+          <ArrowDown className="w-4 h-4 text-white/40" />
         </motion.div>
       </motion.div>
     </section>
