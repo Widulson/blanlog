@@ -1,4 +1,5 @@
 import { Star, CheckCircle2, Clock, MessageCircle, Truck } from "lucide-react";
+import SlideReveal from "./SlideReveal";
 
 const metrics = [
   { icon: MessageCircle, label: "Komunikacja", value: "100%" },
@@ -7,57 +8,64 @@ const metrics = [
   { icon: Clock, label: "Oczekiwanie na rozładunek", value: "100%" },
 ];
 
+const paymentStats = [
+  { value: "142", label: "w terminie", color: "text-primary" },
+  { value: "0", label: "opóźnień", color: "text-foreground" },
+  { value: "0", label: "problemów", color: "text-foreground" },
+];
+
 const RatingsSection = () => {
   return (
-    <section id="oceny" className="py-24 bg-primary text-primary-foreground">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-sm font-semibold text-accent uppercase tracking-wider">Oceny i zaufanie</span>
-          <h2 className="text-4xl font-bold mt-3 mb-4">Perfekcyjna ocena od naszych partnerów</h2>
-          <p className="text-primary-foreground/60 max-w-xl mx-auto">
-            Nasze wyniki na platformie Trans.eu mówią same za siebie
-          </p>
-        </div>
+    <section id="oceny" className="slide-section relative">
+      {/* Background accent */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3" />
+      <div className="absolute inset-0 grid-bg" />
 
-        <div className="grid md:grid-cols-3 gap-8 items-start">
-          {/* Big score */}
-          <div className="text-center md:text-left">
-            <div className="inline-flex items-baseline gap-2 mb-2">
-              <span className="text-8xl font-bold">5.0</span>
-              <Star className="w-8 h-8 text-accent fill-accent" />
-            </div>
-            <p className="text-primary-foreground/60 text-lg">158 ocen od 147 firm</p>
-            <div className="mt-6 flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-400" />
-              <span className="text-primary-foreground/80">
-                <strong className="text-primary-foreground">142</strong> płatności w terminie
+      <div className="relative container mx-auto px-6">
+        <div className="grid md:grid-cols-12 gap-12 items-center">
+          {/* Left: Big score */}
+          <div className="md:col-span-5">
+            <SlideReveal>
+              <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
+                ── Oceny i zaufanie
               </span>
-            </div>
-            <div className="mt-2 flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-400" />
-              <span className="text-primary-foreground/80">
-                <strong className="text-primary-foreground">0</strong> opóźnień w płatnościach
-              </span>
-            </div>
-            <div className="mt-2 flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-400" />
-              <span className="text-primary-foreground/80">
-                <strong className="text-primary-foreground">0</strong> problemów z płatnością
-              </span>
-            </div>
+            </SlideReveal>
+
+            <SlideReveal delay={0.1}>
+              <div className="mt-8 flex items-end gap-3">
+                <span className="text-[120px] md:text-[160px] font-bold text-foreground leading-none tracking-tighter">
+                  5.0
+                </span>
+                <Star className="w-10 h-10 text-primary fill-primary mb-6" />
+              </div>
+              <p className="text-foreground/30 text-lg -mt-2">158 ocen od 147 firm</p>
+            </SlideReveal>
+
+            <SlideReveal delay={0.2}>
+              <div className="mt-10 flex gap-8">
+                {paymentStats.map((s) => (
+                  <div key={s.label}>
+                    <p className={`text-3xl font-bold ${s.color}`}>{s.value}</p>
+                    <p className="text-xs text-foreground/30 uppercase tracking-wider mt-1">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </SlideReveal>
           </div>
 
-          {/* Metrics */}
-          <div className="md:col-span-2 grid grid-cols-2 gap-4">
-            {metrics.map((m) => (
-              <div
-                key={m.label}
-                className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-xl p-6"
-              >
-                <m.icon className="w-5 h-5 text-accent mb-3" />
-                <p className="text-sm text-primary-foreground/60 mb-1">{m.label}</p>
-                <p className="text-3xl font-bold">{m.value}</p>
-              </div>
+          {/* Right: Metric cards */}
+          <div className="md:col-span-7 grid grid-cols-2 gap-4">
+            {metrics.map((m, i) => (
+              <SlideReveal key={m.label} delay={0.2 + i * 0.1} direction="right">
+                <div className="bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-7 hover:border-primary/30 transition-all duration-500 group">
+                  <div className="flex items-center justify-between mb-6">
+                    <m.icon className="w-5 h-5 text-primary/50 group-hover:text-primary transition-colors" />
+                    <CheckCircle2 className="w-4 h-4 text-primary/30" />
+                  </div>
+                  <p className="text-4xl font-bold text-foreground mb-1">{m.value}</p>
+                  <p className="text-xs text-foreground/30 uppercase tracking-wider">{m.label}</p>
+                </div>
+              </SlideReveal>
             ))}
           </div>
         </div>

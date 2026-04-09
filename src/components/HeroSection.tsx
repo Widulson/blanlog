@@ -1,91 +1,129 @@
 import heroImage from "@/assets/hero-logistics.jpg";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, ArrowDown } from "lucide-react";
+import { motion } from "framer-motion";
+
+const stats = [
+  { label: "Ocena", value: "5.0", sub: "158 ocen" },
+  { label: "Płatności", value: "142", sub: "w terminie" },
+  { label: "Komunikacja", value: "100%", sub: "najwyższa" },
+  { label: "Opóźnienia", value: "0", sub: "brak" },
+];
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+    <section className="slide-section relative">
       <img
         src={heroImage}
-        alt="Blan Logistics warehouse and fleet"
+        alt="Blan Logistics fleet on European highway"
         className="absolute inset-0 w-full h-full object-cover"
         width={1920}
         height={1080}
       />
       <div className="absolute inset-0 hero-overlay" />
-      <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 rounded-full gradient-accent" />
-            <span className="text-sm font-medium text-primary-foreground/90">
-              TransRisk: Bardzo dobry płatnik
-            </span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground tracking-tight leading-[1.1] mb-6">
-            Blan Logistics
-            <span className="block text-accent text-3xl md:text-4xl font-medium mt-2">
-              Sp. z o.o.
-            </span>
-          </h1>
-          <p className="text-lg text-primary-foreground/75 max-w-lg mb-10 leading-relaxed">
-            Profesjonalna spedycja i logistyka. Działamy od 2015 roku, obsługując transport międzynarodowy z najwyższą oceną na rynku.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="tel:+48739493974"
-              className="inline-flex items-center gap-2 gradient-accent text-accent-foreground font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+      <div className="absolute inset-0 grid-bg" />
+
+      {/* Decorative lines */}
+      <div className="absolute top-0 left-[15%] w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
+      <div className="absolute top-0 left-[85%] w-px h-full bg-gradient-to-b from-transparent via-primary/10 to-transparent hidden md:block" />
+
+      <div className="relative z-10 container mx-auto px-6 pt-20">
+        <div className="grid md:grid-cols-5 gap-12 items-center min-h-[80vh]">
+          {/* Left content */}
+          <div className="md:col-span-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-1.5 mb-8"
             >
-              <Phone className="w-4 h-4" />
-              Zadzwoń do nas
-            </a>
-            <a
-              href="mailto:faktury@blanlog.com"
-              className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 text-primary-foreground font-medium px-6 py-3 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-xs font-medium text-primary uppercase tracking-widest">
+                Bardzo dobry płatnik
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-6xl md:text-8xl font-bold text-foreground tracking-tighter leading-[0.9] mb-6"
             >
-              <Mail className="w-4 h-4" />
-              faktury@blanlog.com
-            </a>
+              Blan
+              <br />
+              <span className="text-gradient">Logistics</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="text-lg text-foreground/40 max-w-md mb-10 leading-relaxed"
+            >
+              Profesjonalna spedycja i transport międzynarodowy. Od 2015 roku z najwyższą oceną na rynku.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="flex flex-wrap gap-4"
+            >
+              <a
+                href="tel:+48739493974"
+                className="inline-flex items-center gap-2 gradient-accent text-accent-foreground font-semibold px-7 py-3.5 rounded-xl hover:opacity-90 transition-all glow-accent"
+              >
+                <Phone className="w-4 h-4" />
+                Zadzwoń do nas
+              </a>
+              <a
+                href="mailto:faktury@blanlog.com"
+                className="inline-flex items-center gap-2 bg-secondary/50 backdrop-blur-sm border border-border text-foreground/70 font-medium px-7 py-3.5 rounded-xl hover:bg-secondary hover:text-foreground transition-all"
+              >
+                <Mail className="w-4 h-4" />
+                faktury@blanlog.com
+              </a>
+            </motion.div>
           </div>
+
+          {/* Right stats grid */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="md:col-span-2 grid grid-cols-2 gap-3"
+          >
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1 + i * 0.1 }}
+                className="bg-card/40 backdrop-blur-md border border-border/50 rounded-2xl p-5 hover:border-primary/30 hover:glow-accent transition-all duration-500"
+              >
+                <p className="text-3xl md:text-4xl font-bold text-foreground mb-1">{stat.value}</p>
+                <p className="text-xs text-primary font-semibold uppercase tracking-wider">{stat.label}</p>
+                <p className="text-xs text-foreground/30 mt-0.5">{stat.sub}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
-      {/* Bottom stats bar */}
-      <div className="absolute bottom-0 left-0 right-0 bg-card/95 backdrop-blur-md border-t border-border">
-        <div className="container mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg gradient-accent flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-sm">5.0</span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-foreground">Ocena ogólna</p>
-              <p className="text-xs text-muted-foreground">158 ocen / 147 firm</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-              <span className="text-green-700 font-bold text-sm">142</span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-foreground">W terminie</p>
-              <p className="text-xs text-muted-foreground">0 opóźnień</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <span className="text-primary font-bold text-sm">100%</span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-foreground">Komunikacja</p>
-              <p className="text-xs text-muted-foreground">Najwyższa ocena</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <MapPin className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-            <div>
-              <p className="text-sm font-semibold text-foreground">Warszawa</p>
-              <p className="text-xs text-muted-foreground">Jagiellońska 88/51L</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-xs text-foreground/30 uppercase tracking-widest">Przewiń</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          <ArrowDown className="w-4 h-4 text-primary/50" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
