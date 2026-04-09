@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import SlideReveal from "./SlideReveal";
 
 const featuredReviews = [
   {
@@ -32,65 +33,49 @@ const featuredReviews = [
     comment: "Wszystko ok! POLECAM!",
   },
   {
-    company: "Danielli Transporte Joanna Sroga",
-    location: "PL, Poraj",
-    date: "12.11.2025",
-    comment: "Wszystko profesjonalnie. Polecamy współpracę !!!",
-  },
-  {
     company: "Global Trans Service sp. z o.o.",
     location: "PL, Rzeszów",
     date: "31.10.2025",
     comment: "Współpraca przebiegła wzorowo – pełna dostępność i terminowa płatność",
   },
-  {
-    company: "Clermont Express Sp. z o.o.",
-    location: "PL, Warszawa",
-    date: "07.10.2025",
-    comment: "Kontrahent godny polecenia – uczciwy i terminowy.",
-  },
-  {
-    company: "Stanislav Barnet",
-    location: "CZ, Holice",
-    date: "19.11.2025",
-    comment: "Płatność w terminie. Dobry kontakt. Polecam współpracę",
-  },
 ];
 
 const ReviewsSection = () => {
   return (
-    <section id="referencje" className="py-24 bg-background">
+    <section id="referencje" className="slide-section grid-bg">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-sm font-semibold text-accent uppercase tracking-wider">Referencje</span>
-          <h2 className="text-4xl font-bold text-foreground mt-3 mb-4">Co mówią nasi partnerzy</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Wybrane opinie od firm, z którymi mamy przyjemność współpracować
-          </p>
-        </div>
+        <SlideReveal>
+          <div className="text-center mb-16">
+            <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
+              ── Referencje
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mt-4 tracking-tight">
+              Co mówią <span className="text-gradient">partnerzy</span>
+            </h2>
+          </div>
+        </SlideReveal>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {featuredReviews.map((review, i) => (
-            <div
-              key={i}
-              className="bg-card rounded-xl p-6 shadow-card border border-border hover:shadow-elevated transition-shadow group"
-            >
-              <Quote className="w-6 h-6 text-accent/40 mb-3 group-hover:text-accent transition-colors" />
-              <p className="text-foreground mb-4 leading-relaxed italic">
-                „{review.comment}"
-              </p>
-              <div className="flex items-center justify-between pt-4 border-t border-border">
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{review.company}</p>
-                  <p className="text-xs text-muted-foreground">{review.location}</p>
-                </div>
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-3 h-3 text-accent fill-accent" />
-                  ))}
+            <SlideReveal key={i} delay={0.1 + i * 0.08}>
+              <div className="bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:border-primary/20 transition-all duration-500 group h-full flex flex-col">
+                <Quote className="w-5 h-5 text-primary/20 mb-4 group-hover:text-primary/50 transition-colors" />
+                <p className="text-foreground/70 mb-6 leading-relaxed flex-1 text-sm">
+                  „{review.comment}"
+                </p>
+                <div className="flex items-center justify-between pt-4 border-t border-border/30">
+                  <div>
+                    <p className="text-xs font-semibold text-foreground">{review.company}</p>
+                    <p className="text-[10px] text-foreground/30 mt-0.5">{review.location} · {review.date}</p>
+                  </div>
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} className="w-2.5 h-2.5 text-primary fill-primary" />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </SlideReveal>
           ))}
         </div>
       </div>

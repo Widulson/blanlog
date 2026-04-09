@@ -1,67 +1,103 @@
-import { Phone, Mail, MapPin, Building } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import SlideReveal from "./SlideReveal";
+
+const contactItems = [
+  {
+    icon: Phone,
+    label: "Telefon",
+    value: "(+48) 739 493 974",
+    href: "tel:+48739493974",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "faktury@blanlog.com",
+    href: "mailto:faktury@blanlog.com",
+  },
+  {
+    icon: MapPin,
+    label: "Adres",
+    value: "Jagiellońska 88/51L lok.121",
+    sub: "03-215 Warszawa, Polska",
+  },
+];
+
+const registryData = [
+  { label: "Nazwa firmy", value: "Blan Logistics Sp. z o.o." },
+  { label: "NIP", value: "PL 1182114447" },
+  { label: "REGON", value: "362874224" },
+  { label: "KRS", value: "0000583442" },
+  { label: "Działalność od", value: "02.11.2015" },
+  { label: "Na Trans.eu od", value: "06.08.2020" },
+];
 
 const ContactSection = () => {
   return (
-    <section id="kontakt" className="py-24 bg-muted">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16">
+    <section id="kontakt" className="slide-section relative">
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 grid-bg" />
+
+      <div className="relative container mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-20">
           <div>
-            <span className="text-sm font-semibold text-accent uppercase tracking-wider">Kontakt</span>
-            <h2 className="text-4xl font-bold text-foreground mt-3 mb-6">Skontaktuj się z nami</h2>
-            <p className="text-muted-foreground leading-relaxed mb-10">
-              Jesteśmy do dyspozycji. Skontaktuj się z nami, aby omówić szczegóły współpracy transportowej.
-            </p>
+            <SlideReveal>
+              <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
+                ── Kontakt
+              </span>
+              <h2 className="text-4xl md:text-6xl font-bold text-foreground mt-4 mb-12 tracking-tight">
+                Porozmawiajmy
+                <br /><span className="text-gradient">o współpracy</span>
+              </h2>
+            </SlideReveal>
 
-            <div className="space-y-6">
-              <a href="tel:+48739493974" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-xl gradient-accent flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <Phone className="w-5 h-5 text-accent-foreground" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Telefon</p>
-                  <p className="text-lg font-semibold text-foreground">(+48) 739 493 974</p>
-                </div>
-              </a>
-              <a href="mailto:faktury@blanlog.com" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-xl gradient-accent flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <Mail className="w-5 h-5 text-accent-foreground" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="text-lg font-semibold text-foreground">faktury@blanlog.com</p>
-                </div>
-              </a>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl gradient-accent flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-accent-foreground" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Adres</p>
-                  <p className="text-lg font-semibold text-foreground">Jagiellońska 88/51L lok.121</p>
-                  <p className="text-sm text-muted-foreground">03-215 Warszawa, Polska</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-card rounded-2xl p-8 shadow-elevated border border-border">
-            <h3 className="text-xl font-bold text-foreground mb-6">Dane rejestrowe</h3>
-            <div className="space-y-4">
-              {[
-                { icon: Building, label: "Nazwa firmy", value: "Blan Logistics Sp. z o.o." },
-                { label: "NIP", value: "PL 1182114447" },
-                { label: "REGON", value: "362874224" },
-                { label: "KRS", value: "0000583442" },
-                { label: "Działalność od", value: "02.11.2015" },
-                { label: "Na Trans.eu od", value: "06.08.2020" },
-              ].map((item) => (
-                <div key={item.label} className="flex justify-between items-center py-3 border-b border-border last:border-0">
-                  <span className="text-sm text-muted-foreground">{item.label}</span>
-                  <span className="text-sm font-semibold text-foreground">{item.value}</span>
-                </div>
+            <div className="space-y-8">
+              {contactItems.map((item, i) => (
+                <SlideReveal key={item.label} delay={0.1 + i * 0.1}>
+                  {item.href ? (
+                    <a href={item.href} className="flex items-center gap-5 group">
+                      <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-500">
+                        <item.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-foreground/30 uppercase tracking-[0.2em]">{item.label}</p>
+                        <p className="text-lg font-semibold text-foreground mt-0.5">{item.value}</p>
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="flex items-center gap-5">
+                      <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                        <item.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-foreground/30 uppercase tracking-[0.2em]">{item.label}</p>
+                        <p className="text-lg font-semibold text-foreground mt-0.5">{item.value}</p>
+                        {item.sub && <p className="text-xs text-foreground/30 mt-0.5">{item.sub}</p>}
+                      </div>
+                    </div>
+                  )}
+                </SlideReveal>
               ))}
             </div>
           </div>
+
+          <SlideReveal delay={0.3} direction="right">
+            <div className="bg-card/40 backdrop-blur-sm border border-border/50 rounded-3xl p-8">
+              <h3 className="text-xs font-semibold text-primary uppercase tracking-[0.3em] mb-8">
+                Dane rejestrowe
+              </h3>
+              <div className="space-y-0">
+                {registryData.map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex justify-between items-center py-4 border-b border-border/30 last:border-0"
+                  >
+                    <span className="text-sm text-foreground/30">{item.label}</span>
+                    <span className="text-sm font-semibold text-foreground">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </SlideReveal>
         </div>
       </div>
     </section>
