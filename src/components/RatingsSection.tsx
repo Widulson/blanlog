@@ -18,7 +18,7 @@ const RatingsSection = () => {
   return (
     <section id="oceny" className="slide-section relative">
       {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/2" />
       <div className="absolute inset-0 grid-bg" />
 
       <div className="relative container mx-auto px-6">

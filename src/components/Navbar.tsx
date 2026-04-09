@@ -27,7 +27,7 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border"
+          ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-card"
           : "bg-transparent"
       }`}
     >
@@ -41,7 +41,11 @@ const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-foreground/50 hover:text-foreground px-4 py-2 rounded-lg hover:bg-secondary/50 transition-all duration-300 font-medium"
+              className={`text-sm px-4 py-2 rounded-lg transition-all duration-300 font-medium ${
+                scrolled
+                  ? "text-foreground/60 hover:text-foreground hover:bg-secondary"
+                  : "text-white/60 hover:text-white hover:bg-white/10"
+              }`}
             >
               {link.label}
             </a>
@@ -57,7 +61,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-foreground"
+          className={`md:hidden ${scrolled ? "text-foreground" : "text-white"}`}
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
