@@ -29,17 +29,6 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-5 gap-12 items-center min-h-[80vh]">
           {/* Left content */}
           <div className="md:col-span-3">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-1.5 mb-8"
-            >
-              <span className="w-2 h-2 rounded-full gradient-accent animate-pulse" />
-              <span className="text-xs font-medium text-white/90 uppercase tracking-widest">
-                Bardzo dobry płatnik
-              </span>
-            </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
