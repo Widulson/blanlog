@@ -102,15 +102,15 @@
 
   .grid-bg {
     background-image:
-      linear-gradient(hsla(185, 65%, 45%, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsla(185, 65%, 45%, 0.03) 1px, transparent 1px);
+      linear-gradient(hsla(185, 65%, 40%, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(185, 65%, 40%, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
   .line-decoration::before {
     content: '';
     @apply absolute top-0 left-0 w-px h-full;
-    background: linear-gradient(to bottom, transparent, hsl(185 65% 45% / 0.2), transparent);
+    background: linear-gradient(to bottom, transparent, hsl(185 65% 40% / 0.15), transparent);
   }
 
   .text-gradient {
