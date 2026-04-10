@@ -89,7 +89,7 @@ const HeroSection = () => {
                 className="bg-white/8 backdrop-blur-md border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-all duration-500"
               >
                 <p className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</p>
-                <p className="text-xs text-primary font-semibold uppercase tracking-wider">{stat.label}</p>
+                <p className="text-xs text-accent font-semibold uppercase tracking-wider">{stat.label}</p>
                 <p className="text-xs text-white/30 mt-0.5">{stat.sub}</p>
               </motion.div>
             ))}
