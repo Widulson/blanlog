@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   { label: "Ocena", value: "5.0", sub: "158 ocen" },
-  { label: "Płatności", value: "142", sub: "w terminie" },
+  { label: "Płatności", value: "570", sub: "w terminie" },
   { label: "Komunikacja", value: "100%", sub: "najwyższa" },
   { label: "Opóźnienia", value: "0", sub: "brak" },
 ];
