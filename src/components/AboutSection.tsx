@@ -83,7 +83,7 @@ const AboutSection = () => {
               <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-8 overflow-hidden">
                 <div className="absolute top-4 right-4 text-[80px] leading-none font-bold text-primary/10 select-none">"</div>
                 <p className="text-foreground/70 italic text-lg leading-relaxed relative z-10">
-                  Nie przewozimy tylko towarów — przewozimy terminowość, zaufanie i spokój naszych partnerów.
+                  Każdy ładunek to czyjaś obietnica. My dotrzymujemy jej za Was.
                 </p>
                 <p className="text-primary font-semibold text-sm mt-4 relative z-10">— Zespół Blan Logistics</p>
               </div>
