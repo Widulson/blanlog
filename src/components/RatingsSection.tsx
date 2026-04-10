@@ -9,7 +9,7 @@ const metrics = [
 ];
 
 const paymentStats = [
-  { value: "142", label: "w terminie", color: "text-primary" },
+  { value: "570", label: "w terminie", color: "text-primary" },
   { value: "0", label: "opóźnień", color: "text-foreground" },
   { value: "0", label: "problemów", color: "text-foreground" },
 ];
@@ -27,7 +27,7 @@ const RatingsSection = () => {
           <div className="md:col-span-5">
             <SlideReveal>
               <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
-                ── Oceny i zaufanie
+                Oceny i zaufanie
               </span>
             </SlideReveal>
 
