@@ -36,7 +36,7 @@
 
     --radius: 0.75rem;
 
-    --hero-overlay: linear-gradient(135deg, hsla(230, 60%, 10%, 0.82), hsla(230, 50%, 16%, 0.6));
+    --hero-overlay: linear-gradient(135deg, hsla(230, 60%, 10%, 0.7), hsla(230, 50%, 16%, 0.45));
     --gradient-accent: linear-gradient(135deg, hsl(230, 72%, 22%), hsl(220, 65%, 30%));
     --gradient-glow: linear-gradient(135deg, hsl(185, 70%, 42%), hsl(200, 65%, 35%));
     --shadow-card: 0 4px 24px -4px hsla(230, 40%, 20%, 0.08);
@@ -97,7 +97,7 @@
   }
 
   .slide-section {
-    @apply min-h-screen flex items-center relative overflow-hidden;
+    @apply min-h-screen flex items-center relative overflow-hidden my-6;
   }
 
   .grid-bg {
