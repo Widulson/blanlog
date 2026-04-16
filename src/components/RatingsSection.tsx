@@ -45,7 +45,7 @@ const RatingsSection = () => {
                 </span>
                 <Star className="w-10 h-10 text-accent fill-accent mb-6" />
               </div>
-              <p className="text-white/30 text-lg -mt-2">158 ocen od 147 firm</p>
+              <p className="text-white/55 text-lg -mt-2">158 ocen od 147 firm</p>
             </SlideReveal>
 
             <SlideReveal delay={0.2}>
@@ -53,7 +53,7 @@ const RatingsSection = () => {
                 {paymentStats.map((s) => (
                   <div key={s.label}>
                     <p className={`text-3xl font-bold ${s.color}`}>{s.value}</p>
-                    <p className="text-xs text-white/30 uppercase tracking-wider mt-1">{s.label}</p>
+                    <p className="text-xs text-white/55 uppercase tracking-wider mt-1">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -70,7 +70,7 @@ const RatingsSection = () => {
                     <CheckCircle2 className="w-4 h-4 text-accent/30" />
                   </div>
                   <p className="text-4xl font-bold text-white mb-1">{m.value}</p>
-                  <p className="text-xs text-white/30 uppercase tracking-wider">{m.label}</p>
+                  <p className="text-xs text-white/55 uppercase tracking-wider">{m.label}</p>
                 </div>
               </SlideReveal>
             ))}
