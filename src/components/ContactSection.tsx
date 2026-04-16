@@ -12,8 +12,8 @@ const contactItems = [
   {
     icon: Mail,
     label: "Email",
-    value: "faktury@blanlog.com",
-    href: "mailto:faktury@blanlog.com",
+    value: "biuro@blanlog.com",
+    href: "mailto:biuro@blanlog.com",
   },
   {
     icon: MapPin,

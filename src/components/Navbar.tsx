@@ -7,6 +7,7 @@ const navLinks = [
   { label: "O firmie", href: "#o-nas" },
   { label: "Oceny", href: "#oceny" },
   { label: "Referencje", href: "#referencje" },
+  { label: "Strefa klienta", href: "#strefa-klienta" },
   { label: "Kontakt", href: "#kontakt" },
 ];
 
