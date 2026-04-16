@@ -67,7 +67,7 @@ const ContactSection = () => {
                         <item.icon className="w-5 h-5 text-accent" />
                       </div>
                       <div>
-                        <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">{item.label}</p>
+                        <p className="text-[10px] text-white/55 uppercase tracking-[0.2em]">{item.label}</p>
                         <p className="text-lg font-semibold text-white mt-0.5">{item.value}</p>
                       </div>
                     </a>
@@ -77,9 +77,9 @@ const ContactSection = () => {
                         <item.icon className="w-5 h-5 text-accent" />
                       </div>
                       <div>
-                        <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">{item.label}</p>
+                        <p className="text-[10px] text-white/55 uppercase tracking-[0.2em]">{item.label}</p>
                         <p className="text-lg font-semibold text-white mt-0.5">{item.value}</p>
-                        {item.sub && <p className="text-xs text-white/30 mt-0.5">{item.sub}</p>}
+                        {item.sub && <p className="text-xs text-white/55 mt-0.5">{item.sub}</p>}
                       </div>
                     </div>
                   )}
@@ -99,7 +99,7 @@ const ContactSection = () => {
                     key={item.label}
                     className="flex justify-between items-center py-4 border-b border-white/10 last:border-0"
                   >
-                    <span className="text-sm text-white/30">{item.label}</span>
+                    <span className="text-sm text-white/55">{item.label}</span>
                     <span className="text-sm font-semibold text-white">{item.value}</span>
                   </div>
                 ))}

@@ -46,18 +46,18 @@ const AboutSection = () => {
               </h2>
             </SlideReveal>
             <SlideReveal delay={0.15}>
-              <p className="text-white/50 text-sm font-medium uppercase tracking-widest mb-8">
+              <p className="text-white/65 text-sm font-medium uppercase tracking-widest mb-8">
                 Od Warszawy po krańce Europy — od 2015 roku
               </p>
             </SlideReveal>
             <SlideReveal delay={0.2}>
-              <p className="text-white/60 leading-relaxed mb-6 text-lg">
+              <p className="text-white/75 leading-relaxed mb-6 text-lg">
                 Każdy kilometr to obietnica dotrzymana na czas. Blan Logistics to spedycja, 
                 która łączy precyzję z niezawodnością — bo w transporcie nie ma miejsca na „prawie".
               </p>
             </SlideReveal>
             <SlideReveal delay={0.3}>
-              <p className="text-white/60 leading-relaxed mb-10">
+              <p className="text-white/75 leading-relaxed mb-10">
                 Ocena <strong className="text-white">5.0/5.0</strong> na Trans.eu to nie tylko liczby — 
                 to zaufanie budowane z każdą dostawą.
               </p>
@@ -77,7 +77,7 @@ const AboutSection = () => {
                   >
                     <m.icon className="w-4 h-4 text-accent/60 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-white tracking-tight">{m.value}</p>
-                    <p className="text-[10px] text-white/35 uppercase tracking-wider mt-1">{m.label}</p>
+                    <p className="text-[10px] text-white/55 uppercase tracking-wider mt-1">{m.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -102,7 +102,7 @@ const AboutSection = () => {
                 <SlideReveal key={stat.label} delay={0.2 + i * 0.1} direction="right">
                   <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-accent/30 transition-all duration-500 group">
                     <stat.icon className="w-5 h-5 text-accent/60 mb-4 group-hover:text-accent transition-colors" />
-                    <p className="text-[10px] text-white/30 uppercase tracking-[0.2em] mb-1">{stat.label}</p>
+                    <p className="text-[10px] text-white/55 uppercase tracking-[0.2em] mb-1">{stat.label}</p>
                     <p className="text-lg font-bold text-white tracking-tight">{stat.value}</p>
                   </div>
                 </SlideReveal>

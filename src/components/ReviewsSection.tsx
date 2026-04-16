@@ -71,13 +71,13 @@ const ReviewsSection = () => {
             <SlideReveal key={i} delay={0.1 + i * 0.08}>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-accent/20 transition-all duration-500 group h-full flex flex-col">
                 <Quote className="w-5 h-5 text-accent/20 mb-4 group-hover:text-accent/50 transition-colors" />
-                <p className="text-white/70 mb-6 leading-relaxed flex-1 text-sm">
+                <p className="text-white/80 mb-6 leading-relaxed flex-1 text-sm">
                   „{review.comment}"
                 </p>
                 <div className="flex items-center justify-between pt-4 border-t border-white/10">
                   <div>
                     <p className="text-xs font-semibold text-white">{review.company}</p>
-                    <p className="text-[10px] text-white/30 mt-0.5">{review.location} · {review.date}</p>
+                    <p className="text-[10px] text-white/55 mt-0.5">{review.location} · {review.date}</p>
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, j) => (
