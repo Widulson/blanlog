@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import SlideReveal from "./SlideReveal";
 import bgContact from "@/assets/bg-contact.jpg";
 
@@ -20,6 +20,11 @@ const contactItems = [
     label: "Adres",
     value: "Jagiellońska 88/51L lok.121",
     sub: "03-215 Warszawa, Polska",
+  },
+  {
+    icon: Clock,
+    label: "Godziny otwarcia",
+    value: "Pn – Pt: 8:00 – 16:00",
   },
 ];
 
