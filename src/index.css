@@ -101,10 +101,7 @@
   }
 
   .grid-bg {
-    background-image:
-      linear-gradient(hsla(230, 72%, 22%, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, hsla(230, 72%, 22%, 0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background: transparent;
   }
 
   .line-decoration::before {
