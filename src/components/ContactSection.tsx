@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import SlideReveal from "./SlideReveal";
+import bgContact from "@/assets/bg-contact.jpg";
 
 const contactItems = [
   {
@@ -34,17 +35,24 @@ const registryData = [
 const ContactSection = () => {
   return (
     <section id="kontakt" className="slide-section relative">
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent" />
-      <div className="absolute inset-0 grid-bg" />
+      <img
+        src={bgContact}
+        alt="Modern logistics office at dusk"
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        width={1920}
+        height={1080}
+      />
+      <div className="absolute inset-0 hero-overlay" />
 
-      <div className="relative container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-20">
           <div>
             <SlideReveal>
-              <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
-                ── Kontakt
+              <span className="text-xs font-semibold text-accent uppercase tracking-[0.3em]">
+                Kontakt
               </span>
-              <h2 className="text-4xl md:text-6xl font-bold text-foreground mt-4 mb-12 tracking-tight">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mt-4 mb-12 tracking-tight">
                 Porozmawiajmy
                 <br /><span className="text-gradient">o współpracy</span>
               </h2>
@@ -55,23 +63,23 @@ const ContactSection = () => {
                 <SlideReveal key={item.label} delay={0.1 + i * 0.1}>
                   {item.href ? (
                     <a href={item.href} className="flex items-center gap-5 group">
-                      <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-500">
-                        <item.icon className="w-5 h-5 text-primary" />
+                      <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 group-hover:border-accent/40 transition-all duration-500">
+                        <item.icon className="w-5 h-5 text-accent" />
                       </div>
                       <div>
-                        <p className="text-[10px] text-foreground/30 uppercase tracking-[0.2em]">{item.label}</p>
-                        <p className="text-lg font-semibold text-foreground mt-0.5">{item.value}</p>
+                        <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">{item.label}</p>
+                        <p className="text-lg font-semibold text-white mt-0.5">{item.value}</p>
                       </div>
                     </a>
                   ) : (
                     <div className="flex items-center gap-5">
-                      <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                        <item.icon className="w-5 h-5 text-primary" />
+                      <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                        <item.icon className="w-5 h-5 text-accent" />
                       </div>
                       <div>
-                        <p className="text-[10px] text-foreground/30 uppercase tracking-[0.2em]">{item.label}</p>
-                        <p className="text-lg font-semibold text-foreground mt-0.5">{item.value}</p>
-                        {item.sub && <p className="text-xs text-foreground/30 mt-0.5">{item.sub}</p>}
+                        <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">{item.label}</p>
+                        <p className="text-lg font-semibold text-white mt-0.5">{item.value}</p>
+                        {item.sub && <p className="text-xs text-white/30 mt-0.5">{item.sub}</p>}
                       </div>
                     </div>
                   )}
@@ -81,18 +89,18 @@ const ContactSection = () => {
           </div>
 
           <SlideReveal delay={0.3} direction="right">
-            <div className="bg-card/40 backdrop-blur-sm border border-border/50 rounded-3xl p-8">
-              <h3 className="text-xs font-semibold text-primary uppercase tracking-[0.3em] mb-8">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+              <h3 className="text-xs font-semibold text-accent uppercase tracking-[0.3em] mb-8">
                 Dane rejestrowe
               </h3>
               <div className="space-y-0">
                 {registryData.map((item) => (
                   <div
                     key={item.label}
-                    className="flex justify-between items-center py-4 border-b border-border/30 last:border-0"
+                    className="flex justify-between items-center py-4 border-b border-white/10 last:border-0"
                   >
-                    <span className="text-sm text-foreground/30">{item.label}</span>
-                    <span className="text-sm font-semibold text-foreground">{item.value}</span>
+                    <span className="text-sm text-white/30">{item.label}</span>
+                    <span className="text-sm font-semibold text-white">{item.value}</span>
                   </div>
                 ))}
               </div>
