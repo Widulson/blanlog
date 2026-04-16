@@ -97,7 +97,11 @@
   }
 
   .slide-section {
-    @apply min-h-screen flex items-center relative overflow-hidden my-6;
+    @apply min-h-screen flex items-center relative overflow-hidden;
+  }
+
+  .slide-section + .slide-section {
+    @apply mt-6;
   }
 
   .grid-bg {
